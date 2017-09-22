@@ -10,6 +10,8 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,7 @@ import java.util.List;
  */
 @Service
 @Log4j
+@CacheConfig(cacheNames = "data")
 public class DataService {
     private String api  = "http://gank.io/api/data/福利/%d/%d";
     @Autowired
@@ -56,7 +59,7 @@ public class DataService {
         Date now = new Date();
         return  new Data(null,desc,source,type,url, now,now);
     }
-
+    @Cacheable
     public List<Data> list(Integer pageSize,Integer page){
         Pageable pageable = PageRequest.of(page,pageSize);
         return dataDao.findAll(pageable).getContent();

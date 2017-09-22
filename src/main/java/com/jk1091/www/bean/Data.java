@@ -1,5 +1,7 @@
 package com.jk1091.www.bean;
 
+import org.springframework.cache.annotation.EnableCaching;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
