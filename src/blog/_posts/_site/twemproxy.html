@@ -1,0 +1,55 @@
+<blockquote>
+  <p>twemproxy的安装依赖twemproxy的安装要求autoconf的版本在2.64以上，否则提示”error: Autoconf version 2.64 or higher is required“。</p>
+</blockquote>
+
+<h3 id="安装依赖">安装依赖</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo yum install automake
+sudo yum install libtool
+</code></pre></div></div>
+
+<h3 id="登录">登录</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su www
+cd ~ ### 下载autoconf
+wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz ### 解压 
+tar xvf autoconf-2.69.tar.gz
+</code></pre></div></div>
+
+<h3 id="编译安装">编译，安装</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd autoconf-2.69
+./configure --prefix=/home/autoconf-2.69
+make
+sudo make install
+</code></pre></div></div>
+
+<h3 id="建立软连接">建立软连接</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ln -s /home/autoconf-2.69 /usr/local/autoconf
+</code></pre></div></div>
+
+<h3 id="删除旧版本ac">删除旧版本ac</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo rm /usr/bin/autoreconf
+sudo rm /usr/bin/autoconf
+</code></pre></div></div>
+
+<h3 id="增加ac配置">增加ac配置</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ln -s /usr/local/autoconf/bin/autoreconf /usr/bin/autoreconf
+sudo ln -s /usr/local/autoconf/bin/autoconf /usr/bin/autoconf
+</code></pre></div></div>
+
+<h3 id="下载twemproxy">下载twemproxy</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~     wget  https://github.com/twitter/twemproxy/archive/v0.4.1.tar.gz
+</code></pre></div></div>
+
+<h3 id="修改名字">修改名字</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mv v0.4.1 twemproxy-v0.4.1.tar.gz ### 解压
+tar xvf  twemproxy-v0.4.1.tar.gz ### 编译,安装
+cd twemproxy-0.4.1 
+autoreconf -fvi
+./configure --prefix=/home/twemproxy-0.4.1 
+make
+sudo make install
+</code></pre></div></div>
+
+<h3 id="建立软连接-1">建立软连接</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ln -s /home/twemproxy-0.4.1 /usr/local/twemproxy
+</code></pre></div></div>
+

@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-28T03:28:11+00:00</updated><id>http://localhost:4000/</id><title type="html">兔子啊啊啊啊啊啊</title><subtitle>是一只兔子，走动想是一只锅牛，笨得像小猪，梦想是一个胡萝卜......</subtitle><entry><title type="html">twemproxy install</title><link href="http://localhost:4000/twemproxy" rel="alternate" type="text/html" title="twemproxy install" /><published>2017-09-25T04:26:38+00:00</published><updated>2017-09-25T04:26:38+00:00</updated><id>http://localhost:4000/twemproxy-install</id><content type="html" xml:base="http://localhost:4000/twemproxy">&lt;blockquote&gt;
+  &lt;p&gt;twemproxy的安装依赖twemproxy的安装要求autoconf的版本在2.64以上，否则提示”error: Autoconf version 2.64 or higher is required“。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;安装依赖&quot;&gt;安装依赖&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo yum install automake
+sudo yum install libtool
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;登录&quot;&gt;登录&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;su www
+cd ~ ### 下载autoconf
+wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz ### 解压 
+tar xvf autoconf-2.69.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;编译安装&quot;&gt;编译，安装&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd autoconf-2.69
+./configure --prefix=/home/autoconf-2.69
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;建立软连接&quot;&gt;建立软连接&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo ln -s /home/autoconf-2.69 /usr/local/autoconf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;删除旧版本ac&quot;&gt;删除旧版本ac&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo rm /usr/bin/autoreconf
+sudo rm /usr/bin/autoconf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;增加ac配置&quot;&gt;增加ac配置&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo ln -s /usr/local/autoconf/bin/autoreconf /usr/bin/autoreconf
+sudo ln -s /usr/local/autoconf/bin/autoconf /usr/bin/autoconf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下载twemproxy&quot;&gt;下载twemproxy&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~     wget  https://github.com/twitter/twemproxy/archive/v0.4.1.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;修改名字&quot;&gt;修改名字&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mv v0.4.1 twemproxy-v0.4.1.tar.gz ### 解压
+tar xvf  twemproxy-v0.4.1.tar.gz ### 编译,安装
+cd twemproxy-0.4.1 
+autoreconf -fvi
+./configure --prefix=/home/twemproxy-0.4.1 
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;建立软连接-1&quot;&gt;建立软连接&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo ln -s /home/twemproxy-0.4.1 /usr/local/twemproxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">twemproxy的安装依赖twemproxy的安装要求autoconf的版本在2.64以上，否则提示”error: Autoconf version 2.64 or higher is required“。</summary></entry><entry><title type="html">一些个人收藏的好玩的，整理了一部分，先来一些。!</title><link href="http://localhost:4000/haowan" rel="alternate" type="text/html" title="一些个人收藏的好玩的，整理了一部分，先来一些。!" /><published>2017-09-25T04:26:38+00:00</published><updated>2017-09-25T04:26:38+00:00</updated><id>http://localhost:4000/haowan</id><content type="html" xml:base="http://localhost:4000/haowan">&lt;h1 id=&quot;鬼畜精品&quot;&gt;①鬼畜精品&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;【成龙】我的洗发液    http://www.bilibili.com/video/av2023391/&lt;/li&gt;
+  &lt;li&gt;这是你们要的合唱版《孔明&amp;amp;王朗》       http://www.bilibili.com/video/av982443/&lt;/li&gt;
+  &lt;li&gt;【北大力南逸峰】我的故事（完整版）  http://www.bilibili.com/video/av1002217/&lt;/li&gt;
+  &lt;li&gt;【红日】梁逸峰你朗诵这么屌你家里人知道吗？  http://www.bilibili.com/video/av902007/&lt;/li&gt;
+  &lt;li&gt;【大力】浑身难受Gentleman【新感觉RAP】  http://www.bilibili.com/video/av897567/&lt;/li&gt;
+  &lt;li&gt;【三国笑传】你见过这么魔性的曹操吗？http://www.bilibili.com/video/av2147646/&lt;/li&gt;
+  &lt;li&gt;【循环向】跟着雷总摇起来！Are you OK！http://www.bilibili.com/video/av2271112/&lt;/li&gt;
+  &lt;li&gt;【万恶之源】鬼畜全明星的原版合集【持续更新】http://www.bilibili.com/video/av1957774/&lt;/li&gt;
+  &lt;li&gt;【合集】音MAD(鬼畜)常用素材【更新中】http://www.bilibili.com/video/av1731405/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;欢乐向&quot;&gt;②欢乐向&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;非诚勿扰那些带给我们欢乐的奥斯卡影帝们（持续更新中）http://www.bilibili.com/video/av843015/&lt;/li&gt;
+  &lt;li&gt;【国际网骗】模仿7国口音玩H1Z1    http://www.bilibili.com/video/av2786567/&lt;/li&gt;
+  &lt;li&gt;EXO 看涛涛怎样RAP英语笑趴全场 嗯dont be knife    http://www.bilibili.com/video/av1417889/&lt;/li&gt;
+  &lt;li&gt;【男生慎点】这只是一首魔性的好男人之歌 http://www.bilibili.com/video/av2860823/&lt;/li&gt;
+  &lt;li&gt;【男友4】友军之围【PLA RAP】http://www.bilibili.com/video/av984725/&lt;/li&gt;
+  &lt;li&gt;【丧心病狂】给你不一样的F/Z   http://www.bilibili.com/video/av1630492/&lt;/li&gt;
+  &lt;li&gt;肆无忌惮领舞Disco的马云，瞬间击垮我的内心 http://www.bilibili.com/video/av2821899/&lt;/li&gt;
+  &lt;li&gt;【吴妈开口唱歌，超搞笑】做个文明中国人（黄子华、张达明、吴镇宇）http://www.bilibili.com/video/av1286728/&lt;/li&gt;
+  &lt;li&gt;我是不是恁哥【神同步恶搞视频】终于带歌词了！！！！http://www.bilibili.com/video/av843586/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;相声&quot;&gt;③相声&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;郭德纲、于谦相声集锦【更至259p】http://www.bilibili.com/video/av2089266/&lt;/li&gt;
+  &lt;li&gt;三俗午夜场 苗阜、王声 - 五行诗等相声合集（一） http://www.bilibili.com/video/av944176/&lt;/li&gt;
+  &lt;li&gt;三俗午夜场 苗阜、王声 - 五行诗等相声合集（二） http://www.bilibili.com/video/av2153250/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;番剧&quot;&gt;④番剧&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;【更新5P·补番目录】全年代日本动画Top200排行榜 多网站综合评分 补番推荐  http://www.bilibili.com/video/av1184434/&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">①鬼畜精品 【成龙】我的洗发液 http://www.bilibili.com/video/av2023391/ 这是你们要的合唱版《孔明&amp;amp;王朗》 http://www.bilibili.com/video/av982443/ 【北大力南逸峰】我的故事（完整版） http://www.bilibili.com/video/av1002217/ 【红日】梁逸峰你朗诵这么屌你家里人知道吗？ http://www.bilibili.com/video/av902007/ 【大力】浑身难受Gentleman【新感觉RAP】 http://www.bilibili.com/video/av897567/ 【三国笑传】你见过这么魔性的曹操吗？http://www.bilibili.com/video/av2147646/ 【循环向】跟着雷总摇起来！Are you OK！http://www.bilibili.com/video/av2271112/ 【万恶之源】鬼畜全明星的原版合集【持续更新】http://www.bilibili.com/video/av1957774/ 【合集】音MAD(鬼畜)常用素材【更新中】http://www.bilibili.com/video/av1731405/</summary></entry><entry><title type="html">顶级毒鸡汤（砒霜）!</title><link href="http://localhost:4000/jitang" rel="alternate" type="text/html" title="顶级毒鸡汤（砒霜）!" /><published>2017-09-25T00:26:38+00:00</published><updated>2017-09-25T00:26:38+00:00</updated><id>http://localhost:4000/jitang</id><content type="html" xml:base="http://localhost:4000/jitang">&lt;h3 id=&quot;你好毒&quot;&gt;你好毒&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;孩子，穷怎么了？
+穷也要挺起胸膛来，让别人看看，你不仅穷而且还矮。
+矮又如何？抬起你的头来，让他们知道，你不仅矮，而且还丑！
+丑不要紧，用你的言谈举止让其他人明白：你还是一个没有内涵的人。
+没有内涵也不要放弃，从现在开始学习。
+当你读了足够多的书的时候，你会发现：自己还笨。
+别看那些有钱人表面上很风光，其实，他们私底下更风光。
+如果你的脑海里出现了“放弃”两个字，一定要坚定地告诉自己：你都一无所有了，哪来东西让你放弃！
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;作者：宋思翰
+链接：https://www.zhihu.com/question/43340253/answer/232115612
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">你好毒 孩子，穷怎么了？ 穷也要挺起胸膛来，让别人看看，你不仅穷而且还矮。 矮又如何？抬起你的头来，让他们知道，你不仅矮，而且还丑！ 丑不要紧，用你的言谈举止让其他人明白：你还是一个没有内涵的人。 没有内涵也不要放弃，从现在开始学习。 当你读了足够多的书的时候，你会发现：自己还笨。 别看那些有钱人表面上很风光，其实，他们私底下更风光。 如果你的脑海里出现了“放弃”两个字，一定要坚定地告诉自己：你都一无所有了，哪来东西让你放弃！</summary></entry><entry><title type="html">聊天室demo</title><link href="http://localhost:4000/chat" rel="alternate" type="text/html" title="聊天室demo" /><published>2017-09-24T04:26:38+00:00</published><updated>2017-09-24T04:26:38+00:00</updated><id>http://localhost:4000/chat</id><content type="html" xml:base="http://localhost:4000/chat">&lt;p&gt;你进不来&lt;/p&gt;</content><author><name></name></author><summary type="html">你进不来</summary></entry><entry><title type="html">福利!</title><link href="http://localhost:4000/fuli" rel="alternate" type="text/html" title="福利!" /><published>2017-09-24T04:26:38+00:00</published><updated>2017-09-24T04:26:38+00:00</updated><id>http://localhost:4000/fuli</id><content type="html" xml:base="http://localhost:4000/fuli">&lt;p&gt;看福利点击&lt;a href=&quot;http://www.jk1091.com/fuli&quot;&gt;福利&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">看福利点击福利</summary></entry><entry><title type="html">画板!</title><link href="http://localhost:4000/huaban" rel="alternate" type="text/html" title="画板!" /><published>2017-09-24T04:26:38+00:00</published><updated>2017-09-24T04:26:38+00:00</updated><id>http://localhost:4000/huaban</id><content type="html" xml:base="http://localhost:4000/huaban">&lt;div&gt;
+&lt;div class=&quot;wrap&quot;&gt;
+        &lt;canvas id=&quot;canvas&quot; class=&quot;fl&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;
+        &lt;/canvas&gt;
+        &lt;div id=&quot;control&quot; class=&quot;fl&quot;&gt;
+            &lt;div id=&quot;canvas-color&quot;&gt;
+                &lt;h5&gt;
+                    画笔颜色&lt;/h5&gt;
+                &lt;ul&gt;
+                    &lt;li style=&quot;background: #fef4ac&quot;&gt;&lt;/li&gt;
+                    &lt;li style=&quot;background: #0018ba&quot;&gt;&lt;/li&gt;
+                    &lt;li style=&quot;background: #ffc200&quot;&gt;&lt;/li&gt;
+                    &lt;li style=&quot;background: #f32f15&quot;&gt;&lt;/li&gt;
+                    &lt;li style=&quot;background: #cccccc&quot;&gt;&lt;/li&gt;
+                    &lt;li style=&quot;background: #5ab639&quot;&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;canvas-brush&quot;&gt;
+                &lt;h5&gt;
+                    画笔大小&lt;/h5&gt;
+                &lt;span class=&quot;small-brush&quot;&gt;&lt;/span&gt;&lt;span class=&quot;middle-brush&quot;&gt;&lt;/span&gt;&lt;span class=&quot;big-brush&quot;&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;canvas-control&quot;&gt;
+                &lt;h5&gt;
+                    操作&lt;/h5&gt;
+                &lt;span title=&quot;上一步&quot; class=&quot;return-control&quot;&gt;&lt;/span&gt;&lt;span title=&quot;下一步&quot; class=&quot;next-control&quot;&gt;
+                &lt;/span&gt;&lt;span title=&quot;清除&quot; class=&quot;empty-control&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;canvas-drawImage&quot;&gt;
+                &lt;h5&gt;
+                    生成图像&lt;/h5&gt;
+                &lt;p&gt;
+                    &lt;button class=&quot;drawImage&quot;&gt;
+                        生成图像&lt;/button&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;imgDiv&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+ html, body, canvas, div, ul, li, h5, p
+        {
+            margin: 0;
+            padding: 0;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+        img
+        {
+            border: 1px #ccc solid;
+        }
+        ul, li
+        {
+            list-style: none;
+        }
+        .wrap
+        {
+            width: 740px;
+            margin: 20px auto 5px;
+            border: 1px #ccc solid;
+            overflow: hidden;
+        }
+        .fl
+        {
+            float: left;
+            display: inline;
+        }
+        #canvas
+        {
+            border-right: 1px #ccc solid;
+            cursor: crosshair;
+        }
+        #control
+        {
+            width: 130px;
+            height: 400px;
+            margin-left: 4px;
+        }
+        #control div
+        {
+            padding: 5px;
+        }
+        #canvas-color ul
+        {
+            overflow: hidden;
+        }
+        #canvas-color ul li
+        {
+            float: left;
+            display: inherit;
+            width: 13px;
+            height: 13px;
+            border: 3px #fff solid;
+            margin: 8px;
+            cursor: pointer;
+        }
+        #canvas-color ul li.js-border-color
+        {
+            border-color: #000;
+        }
+        #canvas-brush span
+        {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 10px;
+            background: url(images/brush.png);
+            cursor: pointer;
+        }
+        #canvas-brush span.small-brush
+        {
+            background-position: -6px -6px;
+        }
+        #canvas-brush span.middle-brush
+        {
+            background-position: -31px -6px;
+        }
+        #canvas-brush span.big-brush
+        {
+            background-position: -56px -6px;
+        }
+        #canvas-brush span.js-bg-color
+        {
+            background-color: #aaa;
+        }
+        #canvas-control span
+        {
+            display: inline-block;
+            width: 20px;
+            height: 15px;
+            margin-left: 10px;
+            background: url(images/sketchpad_icons.png);
+            cursor: pointer;
+        }
+        #canvas-control span.return-control
+        {
+            background-position: -2px -148px;
+        }
+        #canvas-control span.next-control
+        {
+            background-position: right -168px;
+        }
+        #canvas-control span.empty-control
+        {
+            background-position: -2px -188px;
+        }
+        #canvas-control span.js-return-control
+        {
+            background-position: -2px -209px;
+        }
+        #canvas-control span.js-next-control
+        {
+            background-position: right -230px;
+        }
+        #canvas-control span.js-empty-control
+        {
+            background-position: -2px -251px;
+        }
+        #imgDiv
+        {
+            text-align: center;
+        }
+&lt;/style&gt;
+
+&lt;script&gt;
+  var doc = document,
+canvas = doc.getElementById('canvas'),
+colorDiv = doc.getElementById('canvas-color'),
+brushDiv = doc.getElementById('canvas-brush'),
+controlDiv = doc.getElementById('canvas-control'),
+drawImageDiv = doc.getElementById('canvas-drawImage'),
+imgDiv = doc.getElementById('imgDiv');
+        function Canvas() {
+            this.init.apply(this, arguments);
+        }
+        Canvas.prototype = {
+            //存储当前表面状态数组-上一步
+            preDrawAry: [],
+            //存储当前表面状态数组-下一步
+            nextDrawAry: [],
+            //中间数组
+            middleAry: [],
+            //配置参数
+            confing: {
+                lineWidth: 1,
+                lineColor: &quot;blue&quot;,
+                shadowBlur: 2
+            },
+            init: function (oCanvas, oColor, oBrush, oControl, oDrawImage, imgDiv) {
+                this.canvas = oCanvas;
+                this.context = oCanvas.getContext('2d');
+                this.colorDiv = oColor;
+                this.brushDiv = oBrush;
+                this.controlDiv = oControl;
+                this.drawImageDiv = oDrawImage;
+                this.imgDiv = imgDiv;
+                this._initDraw();
+                this._draw(oCanvas);
+                this.setColor();
+                this.setBrush();
+                this.preClick();
+                this.nextClick();
+                this.clearClick();
+                this.drawImage(oCanvas);
+            },
+            _initDraw: function () {
+                var preData = this.context.getImageData(0, 0, 600, 400);
+                //空绘图表面进栈
+                this.middleAry.push(preData);
+            },
+            //涂鸦主程序
+            _draw: function (oCanvas, context) {
+                var _this = this;
+                oCanvas.onmousedown = function (e) {
+                    var x = e.clientX,
+			y = e.clientY,
+			left = this.parentNode.offsetLeft,
+			top = this.parentNode.offsetTop,
+			canvasX = x - left,
+			canvasY = y - top;
+                    _this._setCanvasStyle();
+                    //清除子路径
+                    _this.context.beginPath();
+                    _this.context.moveTo(canvasX, canvasY);
+                    //当前绘图表面状态
+                    var preData = _this.context.getImageData(0, 0, 600, 400);
+                    //当前绘图表面进栈
+                    _this.preDrawAry.push(preData);
+                    document.onmousemove = function (e) {
+                        var x2 = e.clientX,
+					y2 = e.clientY,
+					t = e.target,
+					canvasX2 = x2 - left,
+					canvasY2 = y2 - top;
+                        if (t == oCanvas) {
+                            _this.context.lineTo(canvasX2, canvasY2);
+                            _this.context.stroke();
+                        } else {
+                            _this.context.beginPath();
+                        }
+                    }
+                    document.onmouseup = function (e) {
+                        var t = e.target;
+                        if (t == oCanvas) {
+                            //当前绘图表面状态
+                            var preData = _this.context.getImageData(0, 0, 600, 400);
+                            if (_this.nextDrawAry.length == 0) {
+                                //当前绘图表面进栈
+                                _this.middleAry.push(preData);
+                            } else {
+                                _this.middleAry = [];
+                                _this.middleAry = _this.middleAry.concat(_this.preDrawAry);
+                                _this.middleAry.push(preData);
+                                _this.nextDrawAry = [];
+                                $('.js-next-control').addClass('next-control');
+                                $('.next-control').removeClass('js-next-control');
+                            }
+
+                            _this._isDraw();
+                        }
+                        this.onmousemove = null;
+                    }
+                }
+            },
+            //设置画笔
+            _setCanvasStyle: function () {
+                this.context.lineWidth = this.confing.lineWidth;
+                this.context.shadowBlur = this.confing.shadowBlur;
+                this.context.shadowColor = this.confing.lineColor;
+                this.context.strokeStyle = this.confing.lineColor;
+            },
+            //设置颜色
+            setColor: function () {
+                this.colorDiv.onclick = this.bind(this, this._setColor);
+            },
+            _setColor: function (e) {
+                var t = e.target;
+                if (t.nodeName.toLowerCase() == &quot;li&quot;) {
+                    this.confing.lineColor = t.style.backgroundColor;
+                    $('.js-border-color').removeClass('js-border-color');
+                    $(t).addClass('js-border-color');
+                }
+            },
+            //设置画笔大小
+            setBrush: function () {
+                this.brushDiv.onclick = this.bind(this, this._setBrush);
+            },
+            _setBrush: function (e) {
+                var t = e.target;
+                if (t.nodeName.toLowerCase() == &quot;span&quot;) {
+                    if (t.className.indexOf(&quot;small-brush&quot;) &gt;= 0) {
+                        this.confing.lineWidth = 3;
+                    } else if (t.className.indexOf(&quot;middle-brush&quot;) &gt;= 0) {
+                        this.confing.lineWidth = 6;
+                    } else if (t.className.indexOf(&quot;big-brush&quot;) &gt;= 0) {
+                        this.confing.lineWidth = 12;
+                    }
+                    $('.js-bg-color').removeClass('js-bg-color');
+                    $(t).addClass('js-bg-color');
+                }
+            },
+            //判断是否已涂鸦,修改按钮状态
+            _isDraw: function () {
+                if (this.preDrawAry.length) {
+                    $('.return-control').addClass('js-return-control');
+                    $('.return-control').removeClass('return-control');
+                    $('.empty-control').addClass('js-empty-control');
+                    $('.empty-control').removeClass('empty-control');
+                } else {
+                    return false;
+                }
+            },
+            //点击上一步-改变涂鸦当前状态
+            preClick: function () {
+                var pre = this.controlDiv.getElementsByTagName(&quot;span&quot;)[0];
+                pre.onclick = this.bind(this, this._preClick);
+            },
+            _preClick: function () {
+                if (this.preDrawAry.length &gt; 0) {
+                    var popData = this.preDrawAry.pop();
+                    var midData = this.middleAry[this.preDrawAry.length + 1];
+                    this.nextDrawAry.push(midData);
+                    this.context.putImageData(popData, 0, 0);
+                }
+                if (this.nextDrawAry.length) {
+                    $('.next-control').addClass('js-next-control');
+                    $('.next-control').removeClass('next-control');
+                }
+                if (this.preDrawAry.length == 0) {
+                    $('.js-return-control').addClass('return-control');
+                    $('.return-control').removeClass('js-return-control');
+                }
+            },
+            //点击下一步-改变涂鸦当前状态
+            nextClick: function () {
+                var next = this.controlDiv.getElementsByTagName(&quot;span&quot;)[1];
+                next.onclick = this.bind(this, this._nextClick);
+            },
+            _nextClick: function () {
+                if (this.nextDrawAry.length) {
+                    var popData = this.nextDrawAry.pop();
+                    var midData = this.middleAry[this.middleAry.length - this.nextDrawAry.length - 2];
+                    this.preDrawAry.push(midData);
+                    this.context.putImageData(popData, 0, 0);
+                }
+                if (this.preDrawAry.length) {
+                    $('.return-control').addClass('js-return-control');
+                    $('.return-control').removeClass('return-control');
+                }
+
+                if (this.nextDrawAry.length == 0) {
+                    $('.js-next-control').addClass('next-control');
+                    $('.next-control').removeClass('js-next-control');
+                }
+            },
+            //清空
+            clearClick: function () {
+                var clear = this.controlDiv.getElementsByTagName(&quot;span&quot;)[2];
+                clear.onclick = this.bind(this, this._clearClick);
+            },
+            _clearClick: function () {
+                var data = this.middleAry[0];
+                this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+                this.preDrawAry = [];
+                this.nextDrawAry = [];
+                this.middleAry = [this.middleAry[0]];
+                this.controlDiv.getElementsByTagName(&quot;span&quot;)[0].className = &quot;return-control&quot;;
+                this.controlDiv.getElementsByTagName(&quot;span&quot;)[1].className = &quot;next-control&quot;;
+                this.controlDiv.getElementsByTagName(&quot;span&quot;)[2].className = &quot;empty-control&quot;;
+            },
+            //生成图像
+            drawImage: function () {
+                var btn = this.drawImageDiv.getElementsByTagName(&quot;button&quot;)[0];
+                btn.onclick = this.bind(this, this._drawImage);
+            },
+            _drawImage: function () {
+                var url = this.canvas.toDataURL('image/png'),
+		 	img = new Image();
+                img.src = url;
+                this.imgDiv.innerHTML = &quot;&quot;;
+                this.imgDiv.appendChild(img);
+            },
+            bind: function (obj, handler) {
+                return function () {
+                    return handler.apply(obj, arguments);
+                }
+            }
+        }
+        new Canvas(canvas, colorDiv, brushDiv, controlDiv, drawImageDiv, imgDiv);
+&lt;/script&gt;</content><author><name></name></author><summary type="html">画笔颜色 画笔大小 操作 生成图像 生成图像</summary></entry><entry><title type="html">java word pdf</title><link href="http://localhost:4000/wordToPdf" rel="alternate" type="text/html" title="java word pdf" /><published>2017-09-20T11:01:00+00:00</published><updated>2017-09-20T11:01:00+00:00</updated><id>http://localhost:4000/poi</id><content type="html" xml:base="http://localhost:4000/wordToPdf">&lt;h1 id=&quot;java-操作docxapache-poi&quot;&gt;java 操作docx（apache poi）&lt;/h1&gt;
+&lt;h3 id=&quot;maven依赖&quot;&gt;maven依赖&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;org.apache.poi&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;poi-ooxml&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;3.11&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;处理段落&quot;&gt;//处理段落&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;XWPFDocument xwpf = new XWPFDocument(new FileInputStream(templatePath + &quot;moban.docx&quot;));
+List&amp;lt;XWPFParagraph&amp;gt; paragraphs = xwpf.getParagraphs();
+if (paragraphs != null &amp;amp;&amp;amp; paragraphs.size() &amp;gt; 0) {
+    for (XWPFParagraph paragraph : paragraphs) {
+        List&amp;lt;XWPFRun&amp;gt; runs = paragraph.getRuns();
+        for (XWPFRun run : runs) {
+            String text = run.getText(0);
+            //文本替换
+            if (text != null) {
+                text = text.replace(&quot;bPersion&quot;, bPersion);
+                run.setText(text, 0);
+            }
+        }
+    }
+}
+//输出新文件
+File inFile = new File(templatePath + bPersion + &quot;.docx&quot;);
+FileOutputStream fos = new FileOutputStream(inFile);
+xwpf.write(fos);
+fos.flush();
+fos.close();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;处理页眉页脚&quot;&gt;处理页眉页脚&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;List&amp;lt;XWPFParagraph&amp;gt; headers = xwpf.getHeaderFooterPolicy().getDefaultHeader().getParagraphs();
+for (XWPFParagraph paragraph : headers) {
+    List&amp;lt;XWPFRun&amp;gt; runs = paragraph.getRuns();
+    for (XWPFRun run : runs) {
+        String text = run.getText(0);
+        if (StringUtils.isNotEmpty(text)) {
+            text = text.replace(&quot;protocolNum&quot;, protocolNum);
+            run.setText(text, 0);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;处理表格&quot;&gt;处理表格&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; XWPFTable xwpfTable = xwpf.getTables().get(0);
+List&amp;lt;XWPFParagraph&amp;gt; tablesParagraphs =xwpfTable.getBody().getParagraphs();
+xwpfTable.getRow(0).getCell(0).setText(&quot;texs&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;docx-转为pdf&quot;&gt;docx 转为pdf&lt;/h1&gt;
+&lt;h2 id=&quot;poi-方式&quot;&gt;poi 方式&lt;/h2&gt;
+&lt;h3 id=&quot;maven依赖-1&quot;&gt;maven依赖&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;fr.opensagres.xdocreport&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;org.apache.poi.xwpf.converter.pdf&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;1.0.6&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;code&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FileInputStream in=new FileInputStream(inputFile);
+XWPFDocument document=new XWPFDocument(in);
+File outFile=new File(outputFile);
+OutputStream out=new FileOutputStream(outFile);
+PdfOptions options=PdfOptions.create().fontEncoding(&quot;windows-1250&quot;);
+PdfConverter.getInstance().convert(document,out,options);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;优缺点&quot;&gt;优缺点&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;优点： 性能可以，不依赖os
+缺点： 生成格式比较乱&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;documents4j-方式&quot;&gt;documents4j 方式&lt;/h2&gt;
+
+&lt;h3 id=&quot;maven-依赖&quot;&gt;maven 依赖&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;com.documents4j&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;documents4j-api&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;1.0.3&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;com.documents4j&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;documents4j-local&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;1.0.3&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;com.documents4j&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;documents4j-util-standalone&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;1.0.3&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;com.documents4j&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;documents4j-transformer-msoffice-word&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;1.0.3&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;code-1&quot;&gt;code&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private void document4j(File wordFile, File target) throws InterruptedException {
+        IConverter converter =  LocalConverter.builder()
+                .baseFolder(new File(templatePath))
+                .workerPool(20, 25, 2, TimeUnit.SECONDS)
+                .processTimeout(5, TimeUnit.SECONDS)
+                .build();
+        //远程实现方式            
+       /* IConverter converter = RemoteConverter.builder()
+                .baseFolder(new File(templatePath))
+                .workerPool(20, 25, 2, TimeUnit.SECONDS)
+                .requestTimeout(10, TimeUnit.SECONDS)
+                .baseUri(&quot;http://192.168.9.228:9998&quot;)
+                .build();*/
+        Future&amp;lt;Boolean&amp;gt; conversion = converter.convert(wordFile)
+                .as(DocumentType.MS_WORD)
+                .to(target)
+                .as(DocumentType.PDF)
+                .prioritizeWith(1000) // optional
+                .schedule();
+        //监控转换线程
+        while(!conversion.isDone()){
+            Thread.sleep(1000 * 1);
+        }
+        converter.shutDown();
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;优缺点-1&quot;&gt;优缺点&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;优点： 格式完美。
+缺点： 性能比较差，依赖ms office ，不能在linux下使用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;docx4j-方式&quot;&gt;docx4j 方式&lt;/h2&gt;
+&lt;h3 id=&quot;maven依赖-2&quot;&gt;maven依赖&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;org.docx4j&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;docx4j&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;3.3.6&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;com.lowagie&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;itext&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;2.1.7&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;code-2&quot;&gt;code&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WordprocessingMLPackage   wordMLPackage = WordprocessingMLPackage.load(inFile);
+Mapper fontMapper=new IdentityPlusMapper();
+PhysicalFont font= PhysicalFonts.get(&quot;Arial Unicode MS&quot;);
+PhysicalFont microsoft_yahei = PhysicalFonts.get(&quot;Microsoft Yahei&quot;);
+
+PhysicalFonts.put(&quot;微软雅黑&quot;, microsoft_yahei);
+PhysicalFonts.put(&quot;等线&quot;,font);
+
+wordMLPackage.setFontMapper(fontMapper);
+FOSettings foSettings= Docx4J.createFOSettings();
+foSettings.setWmlPackage(wordMLPackage);
+Docx4J.toPDF(wordMLPackage, new FileOutputStream(target));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;优缺点-2&quot;&gt;优缺点&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;优点： 性能可以，不依赖os，速度比较宽
+缺点： 字体不统一，需要处理中文乱码的问题&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;##&lt;/p&gt;
+
+&lt;h3 id=&quot;依赖&quot;&gt;依赖&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;在linux上安装libreoffice ### code
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;String cmdstring = &quot;libreoffice --headless --convert-to pdf &quot;  +templatePath + bPersion + &quot;.docx&quot;;
+Process proc = Runtime.getRuntime().exec(cmdstring);
+proc.waitFor(); //阻塞，直到上述命令执行完
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;优缺点-3&quot;&gt;优缺点&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;优点：格式比较好，代码比较少
+缺点：性能一般，需要安装libreoffice和配置path，完全依赖外部环境&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">java 操作docx（apache poi） maven依赖 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.poi&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;poi-ooxml&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.11&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;</summary></entry></feed>
